@@ -31,8 +31,6 @@ Explanation:
 
 OperationResultAfter operation 1[4, 2]After operation 2[4, 8]After operation 3[16, 8]
 
-
-
 Constraints:
 
 1 <= nums.length <= 100
@@ -52,29 +50,30 @@ public class Problem01 {
         int length = sc.nextInt();
         int[] arr = new int[length];
         System.out.println("Enter Array Elements: ");
-        for (int i = 0; i <length; i++) {
-            arr[i]= sc.nextInt();
+        for (int i = 0; i < length; i++) {
+            arr[i] = sc.nextInt();
         }
         System.out.print("Enter k value: ");
         int k = sc.nextInt();
         System.out.print("Enter Multiplier: ");
         int m = sc.nextInt();
-        problem1(arr,k,m);
+        problem1(arr, k, m);
 
     }
-    public static void problem1(int[] arr,int k, int m) {
+
+    public static void problem1(int[] arr, int k, int m) {
         while (k > 0) {
             int smallestIndex = 0;
             int newValue;
             int smallest = Integer.MAX_VALUE;
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i] < smallest) {
-                    smallest=arr[i];
-                    smallestIndex=i;
+                    smallest = arr[i];
+                    smallestIndex = i;
                 }
             }
-            newValue=m*smallest;
-            arr[smallestIndex]=newValue;
+            newValue = m * smallest;
+            arr[smallestIndex] = newValue;
             k--;
         }
         System.out.print("Final Array: ");
